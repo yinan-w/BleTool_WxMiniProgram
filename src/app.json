@@ -1,0 +1,19 @@
+{
+  "darkmode": true,
+  "themeLocation": "theme.json",
+
+  "pages": [
+    "pages/index/index",
+    "pages/link/link"
+  ],
+  "window": {
+    "navigationBarTitleText": "BleTool 蓝牙调试",
+    
+    "navigationBarBackgroundColor": "@navBackgroundColor",
+    "navigationBarTextStyle": "@navigationBarTextStyle",
+    "backgroundTextStyle": "@backgroundTextStyle",
+    "backgroundColor": "@backgroundColor"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

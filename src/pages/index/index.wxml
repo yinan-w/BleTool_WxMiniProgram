@@ -1,0 +1,36 @@
+<view class="container">
+  <view>
+    <text>RSSI: {{rssi}} dbm</text>
+    <slider bindchange="sliderChange" min="50" max="150" value="100" />
+  </view>
+  
+  <view class="operate">
+    <button type="primary" size="mini" wx:if="{{  $state.bleScanning }}" bindtap="stopSC">
+      停止扫描
+    </button>
+    <button type="primary" size="mini" wx:else bindtap="scanning">扫描BEL</button>
+    <button type="primary" size="mini" bindtap="clearlist" style="margin-left: 10px;">清空列表</button>
+  </view>
+
+  <view class="list" wx:for="{{$state.bleDevices}}" wx:key="index" wx:if="{{item.rssi || item.RSSI >= rssi}}">
+    <view class="name">{{item.localName || item.name || "-"}}</view>
+    
+    <view class="text">
+      <view class="rssi">Rssi: {{item.rssi || item.RSSI }}</view>
+      <view class="serverS">Server: {{item.advertisServiceUUIDs.length || 0}}</view>
+    </view>
+
+    <view class="data">deviceId: {{item.deviceId}}</view>
+    <view class="data">{{item.data}}</view>
+
+    <view class="link">
+          <button type="primary" size="mini" bindtap="linkPage" data-deviceId="{{item.deviceId}}" data-name="{{item.name || item.localName }}" style="margin-top: 10px;">
+      连接设备
+    </button>
+
+    </view>
+      
+    
+
+  </view>
+</view>

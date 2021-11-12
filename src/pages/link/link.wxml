@@ -1,0 +1,40 @@
+<!-- pages/link/link.wxml -->
+<view class="container">
+    <view class="operate">
+        <button type="primary" wx:if="{{  blestatu }}" bindtap="disconnect">断开连接</button>
+        <button type="primary" wx:else bindtap="connection">连接设备</button>
+    </view>
+    <view class="services" wx:for="{{services}}" wx:key="index">
+        <view class="uuid">{{  item.uuid }}</view>
+        <view>isPrimary: {{ item.isPrimary }}</view>
+        
+        <view class="characteristics" wx:for="{{ item.characteristics }}" wx:for-index="idx" wx:for-item="itx" wx:key="idx">
+            <view class="uuid">{{  itx.uuid }}</view>
+
+            <view class="properties">
+                <view>读：{{ itx.properties.read }}</view>
+                <view>写：{{ itx.properties.write }}</view>
+                <view>notify：{{ itx.properties.notify }}</view>
+                <view>indicate：{{ itx.properties.indicate }}</view>
+            </view>
+            
+            <view class="characteristicsOperate">
+                <button wx:if="{{ itx.log }}" data-index="{{ index }}" data-idx="{{ idx }}" type="primary" size="mini" bindtap="clearLog">
+                    清空日志
+                </button>
+                <button wx:if="{{  itx.properties.read }}" data-index="{{ index }}" data-idx="{{ idx }}" type="primary" size="mini" bindtap="readFun">
+                    读取
+                </button>
+                <button wx:if="{{  itx.properties.notify }}" data-index="{{ index }}" data-idx="{{ idx }}" type="primary" size="mini" bindtap="onValueChange">
+                    监听
+                </button>
+                <button wx:if="{{  itx.properties.notify }}" data-index="{{ index }}" data-idx="{{ idx }}" type="primary" size="mini" bindtap="cancelValueChange">
+                    取消监听
+                </button>
+            </view>
+            <view class="logtextContent" wx:if="{{ itx.log }}">
+                <textarea class="input" style="width: 100%;text-align: justify;" maxlength="-1" adjust-position="true" auto-height="true" value="{{itx.log}}" />
+            </view>
+        </view>
+    </view>
+</view>

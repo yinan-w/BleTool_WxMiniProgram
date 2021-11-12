@@ -1,0 +1,8 @@
+
+.container{
+    margin: 0 15px;
+    padding-bottom: 30px;
+  }
+
+
+@import 'app-wxa-auto-dark.wxss'

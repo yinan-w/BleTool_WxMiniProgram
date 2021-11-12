@@ -1,0 +1,66 @@
+.operate {
+    margin: 10px 0;
+}
+
+
+.services {
+    background-color: #ececec;
+    margin: 20rpx 0 0;
+    padding: 20rpx;
+    border-radius: 10rpx;
+    font-size: 14px;
+}
+
+.services .uuid {
+    font-weight: bold;
+}
+
+
+
+
+.characteristics {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #cecece;
+    border-radius: 10rpx;
+}
+
+.characteristics .uuid {
+    font-weight: bold;
+}
+
+
+.characteristicsOperate {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.characteristicsOperate button {
+    margin: 0 5px;
+}
+
+
+.characteristics .properties {
+    display: flex;
+    font-size: 12px;
+}
+
+.characteristics .properties view {
+    margin: 0 10px;
+}
+
+
+
+
+.logtextContent {
+    background-color: #b6b6b6;
+    max-height: 100px;
+    overflow: auto;
+}
+
+.logtextContent .input {
+    font-size: 14px;
+}
+
+/* pages/link/link.wxss */
+@import 'link-wxa-auto-dark.wxss'
